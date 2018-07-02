@@ -1,6 +1,6 @@
-# OpenTrade is the best opensource cryptocurrency exchange!
+# Azart Trade - Open source cryptocurrency exchange for Azart 
 
-Life version https://trade.multicoins.org/
+Life version https://trade.azartpay.com/
 
 Step-by-step install instructions:
 
@@ -18,15 +18,15 @@ sudo reboot
 
 nvm install 6.0.0
 
-git clone https://github.com/3s3s/opentrade.git
-cd opentrade
+git clone https://github.com/azartpay/azart-trade.git
+cd azart-trade
 
 sudo npm install 
 
-mkdir ~/opentrade/server/database
+mkdir ~/azart-trade/server/database
 ```
 
-## Here is an example of file ~/opentrade/server/modules/private_constants.js Edit as per your config.
+## Here is an example of file ~/azart-trade/server/modules/private_constants.js Edit as per your config.
 
 ```
 'use strict';
@@ -46,12 +46,12 @@ exports.walletspassphrase = {
 **After all you can run exchange**
 
 ```
-cd  ~/opentrade/server
+cd  ~/azart-trade/server
 sudo node main.js
 ```
 
 In the browser address string type https://127.0.0.1:40443
-You will see OpenTrade.
+You will see Azart Trade.
 
 The first registered user will be exchange administrator. 
 
@@ -85,7 +85,7 @@ Also you must encrypt wallet.dat by the command
 
 ```
 
-*If coin is not supported encryption (like ZerroCash and it forks) then coin could not be added to the OpenTrade*
+*If coin is not supported encryption (like ZerroCash and it forks) then coin could not be added to the Azart Trade*
 
 
 When coin daemons will be configured and started
@@ -99,19 +99,19 @@ When coin daemons will be configured and started
 
 All visible coins should be appear in the Wallet. You shoud create default coin pairs now.
 
-File ~/opentrade/server/constants.js have constant that you can change
+File ~/azart-trade/server/constants.js have constant that you can change
 
-https://github.com/3s3s/opentrade/blob/master/server/constants.js#L5
+https://github.com/azartpay/azart-trade/blob/master/server/constants.js#L5
 
 ```
-exports.TRADE_MAIN_COIN = "Marycoin"; //change Marycoin to your main coin pair
-exports.TRADE_DEFAULT_PAIR = "Litecoin"; //change Litecoin to your default coin pair
+exports.TRADE_MAIN_COIN = "Azart"; //change Marycoin to your main coin pair
+exports.TRADE_DEFAULT_PAIR = "Bitcoin"; //change Litecoin to your default coin pair
 exports.TRADE_COMISSION = 0.001; //change trade comission percent
 
-exports.recaptcha_pub_key = "6LeX5SQUAAAAAKTieM68Sz4MECO6kJXsSR7_sGP1"; //change to your recaptcha public key
+exports.recaptcha_pub_key = "6LeZ0WEUAAAAAG8hT0YzNPGga5W2ZpXNhr_acpG5"; //change to your recaptcha public key
 
-exports.NOREPLY_EMAIL = 'no-reply@multicoins.org'; //change no-reply email
-exports.SUPPORT_EMAIL = 'ivanivanovkzv@gmail.com'; //change to your valid email for support requests
+exports.NOREPLY_EMAIL = 'no-reply@azartpay.com'; //change no-reply email
+exports.SUPPORT_EMAIL = 'support@azartpay.com'; //change to your valid email for support requests
 exports.my_portSSL = 40443; //change to your ssl port
 
 ```
