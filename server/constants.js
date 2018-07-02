@@ -1,10 +1,10 @@
 'use strict';
 
-const SUPPORT_EMAIL = 'support@email.com';
-const NOREPLY_EMAIL = 'no-reply@email.com';
+const SUPPORT_EMAIL = 'support@azartpay.com';
+const NOREPLY_EMAIL = 'no-reply@azartpay.com';
 
-const MAILER_NAME = 'OpenTrade Mailer';
-const START_MESSAGE = 'OpenTrade started!';
+const MAILER_NAME = 'AzartTrade Mailer';
+const START_MESSAGE = 'AzartTrade Started!';
 
 const DashForks = ['DASH', 'WAVI'];
 
@@ -16,9 +16,9 @@ exports.share = {
    
    my_portSSL: 40443,
    
-   TRADE_MAIN_COIN: "Marycoin",
-   TRADE_MAIN_COIN_TICKER: "MC",
-   TRADE_DEFAULT_PAIR: "Litecoin"
+   TRADE_MAIN_COIN: "Azart",
+   TRADE_MAIN_COIN_TICKER: "AZART",
+   TRADE_DEFAULT_PAIR: "Bitcoin"
 };
 
 exports.TRADE_COMISSION = 0.001;
@@ -27,7 +27,7 @@ exports.my_port = process.env.PORT || 40080;
 
 exports.SESSION_TIME = 3600*1000; //one hour
 
-exports.recaptcha_pub_key = "6LeX5SQUAAAAAKTieM68Sz4MECO6kJXsSR7_sGP1";
+exports.recaptcha_pub_key = "6LfmzWEUAAAAAHVUJcUuZCxB0miIS5IfoRmYysbf";
 const MAX_IP_CONNECTIONS = 100;
 
 exports.dbTables = [
