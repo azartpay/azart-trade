@@ -1,4 +1,5 @@
-# Azart Trade - Open source cryptocurrency exchange for Azart 
+# Azart Trade
+## Open source cryptocurrency exchange for Azart 
 
 Life version https://trade.azartpay.com/
 
