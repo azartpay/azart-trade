@@ -262,7 +262,7 @@ $('#del_coin').click(e => {
         "<form>" +
             "<div class='form-group'>" +
                 "<label class='col-form-label' for='id-delcoin-name'>Coin name</label>" +
-                "<input type='text' class='form-control' id='id-delcoin-name' placeholder='Marycoin'>" +
+                "<input type='text' class='form-control' id='id-delcoin-name' placeholder='Azart''>" +
             "</div>" +
         "</form>";
         
@@ -287,15 +287,15 @@ $('#add_coin').click(e => {
         "<form>" +
             "<div class='form-group'>" +
                 "<label class='col-form-label' for='id-newcoin-name'>Coin name</label>" +
-                "<input type='text' class='form-control' id='id-newcoin-name' placeholder='Marycoin'>" +
+                "<input type='text' class='form-control' id='id-newcoin-name' placeholder='Azart'>" +
             "</div>" +
             "<div class='form-group'>" +
                 "<label class='col-form-label' for='id-newcoin-ticker'>Coin ticker</label>" +
-                "<input type='text' class='form-control' id='id-newcoin-ticker' placeholder='MC'>" +
+                "<input type='text' class='form-control' id='id-newcoin-ticker' placeholder='AZART'>" +
             "</div>" +
             "<div class='form-group'>" +
                 "<label class='col-form-label' for='id-newcoin-icon'>Icon URL</label>" +
-                "<input type='text' class='form-control' id='id-newcoin-icon' placeholder='https://raw.githubusercontent.com/multicoins/marycoin/0.15.0.2hf/src/qt/res/icons/bitcoin.ico'>" +
+                "<input type='text' class='form-control' id='id-newcoin-icon' placeholder='https://raw.githubusercontent.com/azartpay/azart/master/share/pixmaps/azart.ico'>" +
             "</div>" +
             "<div class='form-group'>" +
                 "<label class='col-form-label' for='id-newcoin-rpcaddress'>RPC address</label>" +
@@ -303,11 +303,11 @@ $('#add_coin').click(e => {
             "</div>" +
             "<div class='form-group'>" +
                 "<label class='col-form-label' for='id-newcoin-rpcuser'>RPC user</label>" +
-                "<input type='text' class='form-control' id='id-newcoin-rpcuser' placeholder='kzv_rpc'>" +
+                "<input type='text' class='form-control' id='id-newcoin-rpcuser' placeholder='rpc_user'>" +
             "</div>" +
             "<div class='form-group'>" +
                 "<label class='col-form-label' for='id-newcoin-rppassword'>RPC password</label>" +
-                "<input type='password' class='form-control' id='id-newcoin-rpcpassword' placeholder='kzv_rpc'>" +
+                "<input type='password' class='form-control' id='id-newcoin-rpcpassword' placeholder='rpc_password'>" +
             "</div>" +
         "</form>";
     

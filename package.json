@@ -1,10 +1,10 @@
 {
-  "name": "OpenTrade",
+  "name": "azart-trade",
   "version": "0.1.0",
-  "description": "Open Source Cryptocurrency Exchange",
+  "description": "Open source cryptocurrency exchange for Azart",
   "repository": {
     "type": "git",
-    "url": "https://github.com/3s3s/opentrade.git"
+    "url": "https://github.com/azartpay/azart-trade.git"
   },
   "dependencies": {
     "express": "latest",

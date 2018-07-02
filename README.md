@@ -1,11 +1,11 @@
 # Azart Trade
-## Open source cryptocurrency exchange for Azart 
+### Open source cryptocurrency exchange for Azart 
 
 Life version https://trade.azartpay.com/
 
 Step-by-step install instructions:
 
-1. Register on the VPS hosting like this https://m.do.co/c/1ece5d76d5cd
+1. Register on the VPS hosting like this https://www.digitalocean.com
 2. Create "Droplet" Ubuntu 16 x64 / 1GB / 1vCPU / 25 GB SSD
 3. Log in to Droplet console over SSH
 4
@@ -38,7 +38,7 @@ exports.SSL_KEY = '../ssl_certificates/privkey.pem'; //change to your ssl certif
 exports.SSL_CERT = '../ssl_certificates/fullchain.pem'; //change to your ssl certificates fullchain
 
 exports.walletspassphrase = {
-    'MC' : 'LONG_RANDOM_STRING2',
+    'AZART' : 'LONG_RANDOM_STRING2',
     'BTC' : 'LONG_RANDOM_STRING3',
     'DOGE' : 'LONG_RANDOM_STRING4'
 };

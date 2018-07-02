@@ -3,8 +3,8 @@
 const SUPPORT_EMAIL = 'support@azartpay.com';
 const NOREPLY_EMAIL = 'no-reply@azartpay.com';
 
-const MAILER_NAME = 'AzartTrade Mailer';
-const START_MESSAGE = 'AzartTrade Started!';
+const MAILER_NAME = 'Azart Trade Mailer';
+const START_MESSAGE = 'Azart Trade Started!';
 
 const DashForks = ['DASH', 'WAVI'];
 

@@ -11,7 +11,7 @@ catch(e)
 }
 
 let g_LB_Data = {};
-let g_MC_BTC_Price = 1000000;
+let g_AZART_BTC_Price = 1000000;
 
 var g_CurrentPair = utils.DEFAULT_PAIR;
 var g_CurrentLang = 'ru';
@@ -75,7 +75,7 @@ $(() => {
 
   $('.staff_area').hide();
   
-  setInterval(UpdateMCFromLB, 30000);
+  setInterval(UpdateAZARTFromLB, 30000);
 });
 
 $('#inputBuyTotal').change(e => {
@@ -104,9 +104,9 @@ function UpdateBuySellText()
   
 }
 
-function UpdateMCFromLB()
+function UpdateAZARTFromLB()
 {
-  const MC = coinNameToTicker[utils.MAIN_COIN] ? coinNameToTicker[utils.MAIN_COIN].ticker || 'MC' : 'MC';
+  const AZART = coinNameToTicker[utils.MAIN_COIN] ? coinNameToTicker[utils.MAIN_COIN].ticker || 'AZART' : 'AZART';
   
   fetch('/bitcoinaverage/ticker-all-currencies/')
     .then(response => {
@@ -116,34 +116,34 @@ function UpdateMCFromLB()
     })
     .then( data => {
       g_LB_Data = data;
-      UpdateMCInfo();
+      UpdateAZARTInfo();
     });
     
-    function UpdateMCInfo() {
+    function UpdateAZARTInfo() {
       if (!g_LB_Data || !g_LB_Data.USD || !g_LB_Data.RUB)
         return;
       
-      if (MC == 'BTC') g_MC_BTC_Price = 0;
+      if (AZART == 'BTC') g_AZART_BTC_Price = 0;
         
-      const USD = g_LB_Data.USD.rates.last/(g_MC_BTC_Price+1);
-      const BTC = 1/(g_MC_BTC_Price+1);
-      const EUR = g_LB_Data.EUR.rates.last/(g_MC_BTC_Price+1);
-      const RUB = g_LB_Data.RUB.rates.last/(g_MC_BTC_Price+1);
+      const USD = g_LB_Data.USD.rates.last/(g_AZART_BTC_Price+1);
+      const BTC = 1/(g_AZART_BTC_Price+1);
+      const EUR = g_LB_Data.EUR.rates.last/(g_AZART_BTC_Price+1);
+      const RUB = g_LB_Data.RUB.rates.last/(g_AZART_BTC_Price+1);
       
-      $('#id_MC_info').empty();
-      if (MC != 'BTC')
+      $('#id_AZART_info').empty();
+      if (AZART != 'BTC')
       {
-        $('#id_MC_info').append($('<li class="breadcrumb-item">1 ' + MC + ' = '+BTC.toFixed(8)+' BTC</li>'));
-        $('#id_MC_info').append($('<li class="breadcrumb-item">'+USD.toFixed(3)+' USD</li>'));
-        $('#id_MC_info').append($('<li class="breadcrumb-item">'+EUR.toFixed(3)+' EUR</li>'));
+        $('#id_AZART_info').append($('<li class="breadcrumb-item">1 ' + AZART + ' = '+BTC.toFixed(8)+' BTC</li>'));
+        $('#id_AZART_info').append($('<li class="breadcrumb-item">'+USD.toFixed(3)+' USD</li>'));
+        $('#id_AZART_info').append($('<li class="breadcrumb-item">'+EUR.toFixed(3)+' EUR</li>'));
       }
       else
       {
-        $('#id_MC_info').append($('<li class="breadcrumb-item">1 ' + MC + ' = '+USD.toFixed(2)+' USD</li>'));
-        $('#id_MC_info').append($('<li class="breadcrumb-item">'+EUR.toFixed(2)+' EUR</li>'));
+        $('#id_AZART_info').append($('<li class="breadcrumb-item">1 ' + AZART + ' = '+USD.toFixed(2)+' USD</li>'));
+        $('#id_AZART_info').append($('<li class="breadcrumb-item">'+EUR.toFixed(2)+' EUR</li>'));
       }
       
-      $('#id_MC_info').append($('<li class="breadcrumb-item">'+RUB.toFixed(2)+' RUB</li>'));
+      $('#id_AZART_info').append($('<li class="breadcrumb-item">'+RUB.toFixed(2)+' RUB</li>'));
     }
 }
 
@@ -222,7 +222,7 @@ $('#form_sell').submit(e => {
 
 function AddOrder(order)
 {
-  const MC = coinNameToTicker[utils.MAIN_COIN] ? coinNameToTicker[utils.MAIN_COIN].ticker || 'MC' : 'MC'; 
+  const AZART = coinNameToTicker[utils.MAIN_COIN] ? coinNameToTicker[utils.MAIN_COIN].ticker || 'AZART' : 'AZART'; 
   const bodyModal = 
     '<table class="table">'+
       '<tr>'+
@@ -235,7 +235,7 @@ function AddOrder(order)
         '<td>'+order.order+'</td>'+
         '<td>'+order.amount.toFixed(8)*1+'</td>'+
         '<td>'+order.coin+'</td>'+
-        '<td>'+order.price.toFixed(8)*1+" "+MC+'</td>'+
+        '<td>'+order.price.toFixed(8)*1+" "+AZART+'</td>'+
       '</tr>'
     '</table>';
   
@@ -387,8 +387,8 @@ function UpdateMarket(message)
     
     if (coinName == 'Bitcoin')
     {
-      g_MC_BTC_Price = price;
-      setTimeout(UpdateMCFromLB, 1);
+      g_AZART_BTC_Price = price;
+      setTimeout(UpdateAZARTFromLB, 1);
     }
 
     const tr = $('<tr></tr>')
@@ -421,20 +421,20 @@ function UpdateBuySellTickers()
   if (!coinNameToTicker[g_CurrentPair])
     return;
   
-  const MC = coinNameToTicker[utils.MAIN_COIN] ? coinNameToTicker[utils.MAIN_COIN].ticker || 'MC' : 'MC';
+  const AZART = coinNameToTicker[utils.MAIN_COIN] ? coinNameToTicker[utils.MAIN_COIN].ticker || 'AZART' : 'AZART';
   const BTC = coinNameToTicker[g_CurrentPair].ticker;
   
   $('#id_amount_buy').text(BTC);
   $('#id_amount_sell').text(BTC);
   
-  $('#id_price_buy').text(MC);
-  $('#id_price_sell').text(MC);
+  $('#id_price_buy').text(AZART);
+  $('#id_price_sell').text(AZART);
   
-  $('#id_comission_buy').text(MC);
-  $('#id_comission_sell').text(MC);
+  $('#id_comission_buy').text(AZART);
+  $('#id_comission_sell').text(AZART);
   
-  $('#id_total_buy').text(MC);
-  $('#id_total_sell').text(MC);
+  $('#id_total_buy').text(AZART);
+  $('#id_total_sell').text(AZART);
 
 }
 
@@ -901,12 +901,12 @@ function SetChartLegend()
     return;
   }
     
-  const MC = coinNameToTicker[utils.MAIN_COIN].ticker; 
+  const AZART = coinNameToTicker[utils.MAIN_COIN].ticker; 
   const COIN = coinNameToTicker[g_CurrentPair].ticker
   
 
-  $.getJSON( "/api/v1/public/getmarketsummary?market="+MC+"-"+COIN, ret => {
-    if (!ret || !ret.success || ret.success != true || MC != coinNameToTicker[utils.MAIN_COIN].ticker || COIN != coinNameToTicker[g_CurrentPair].ticker) 
+  $.getJSON( "/api/v1/public/getmarketsummary?market="+AZART+"-"+COIN, ret => {
+    if (!ret || !ret.success || ret.success != true || AZART != coinNameToTicker[utils.MAIN_COIN].ticker || COIN != coinNameToTicker[g_CurrentPair].ticker) 
       return;
     
     AddCoinInfo(ret);
@@ -914,12 +914,12 @@ function SetChartLegend()
     const legend = $(
       '<ul class="nav">'+
         '<li class="nav-item mr-3"><img src="'+unescape(ret.result.coin_icon_src)+'" width=40 /></li>'+
-        '<li class="nav-item mr-3"><h4>'+COIN+' / '+MC+'</h4></li>'+
+        '<li class="nav-item mr-3"><h4>'+COIN+' / '+AZART+'</h4></li>'+
         '<li class="nav-item mr-2 ml-3">24High: '+ret.result.High+'</li>'+
         '<li class="nav-item mr-2 ml-3">24Low: '+ret.result.Low+'</li>'+
         '<li class="nav-item mr-2 ml-3">24V: '+ret.result.Volume+'</li>'+
       '</ul>'
-      )//('<h4>'+COIN+' / '+MC+'</h4>');
+      )//('<h4>'+COIN+' / '+AZART+'</h4>');
     $('#chart_legend').empty();
     $('#chart_legend').append(legend);
   });

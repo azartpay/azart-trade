@@ -44,8 +44,8 @@ exports.object = {
         'Your history' : ['Your history', 'Ваши исполненные заявки'],
         'Trade history' : ['Trade history', 'История торгов'],
         'Forgot your password?' : ['Forgot your password?', 'Забыли пароль?'],
-        'New to OpenTrade?' : ['New to OpenTrade?', 'Еще не зарегистрированы на OpenTrade?'],
+        'New to Azart Trade?' : ['New to Azart Trade?', 'Еще не зарегистрированы на Azart Trade?'],
         'Sign up now!' : ['Sign up now!', 'Зарегистрироваться сейчас!'],
-        'OpenTrade - Open Source Cryptocurrency Exchange' : ['OpenTrade - Open Source Cryptocurrency Exchange', 'OpenTrade - Биржа криптовалют с открытым кодом']
+        'Azart Trade - Open source cryptocurrency exchange for Azart' : ['Azart Trade - Open source cryptocurrency exchange for Azart', 'Azart Trade - Биржа криптовалют с открытым кодом для Azart']
     }
 };
